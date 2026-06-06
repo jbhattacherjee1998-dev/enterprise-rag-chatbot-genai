@@ -1,0 +1,223 @@
+
+Enterprise RAG Chatbot - Complete Learning Notes
+
+PROJECT GOAL
+Build an Enterprise RAG Chatbot using Python, Streamlit, Ollama, Llama3, ChromaDB and LangChain.
+
+Architecture:
+PDF -> Loader -> Chunking -> Embeddings -> Vector DB -> Similarity Search -> LLM -> Answer
+
+==================================================
+PRE-REQUISITES
+==================================================
+
+1. Install VS Code
+Purpose:
+- Code editor
+- Integrated terminal
+- Python development
+
+2. Install Python 3.11
+Verify:
+python --version
+
+3. Create Virtual Environment
+python -m venv venv
+
+Activate:
+PowerShell:
+.\venv\Scripts\Activate.ps1
+
+CMD:
+venv\Scripts\activate.bat
+
+Purpose:
+- Isolated dependencies
+- Project-specific packages
+
+==================================================
+OLLAMA
+==================================================
+
+What is Ollama?
+Runs LLMs locally.
+
+Install:
+https://ollama.com
+
+Verify:
+ollama --version
+
+Start:
+ollama serve
+
+Download Models:
+
+ollama pull llama3
+Purpose:
+Main LLM
+
+ollama pull nomic-embed-text
+Purpose:
+Embedding generation
+
+Verify:
+ollama list
+
+==================================================
+LIBRARIES
+==================================================
+
+streamlit
+- Frontend UI
+
+langchain
+- RAG framework
+
+langchain-community
+- Community integrations
+
+langchain-ollama
+- Ollama integration
+
+langchain-text-splitters
+- Chunking
+
+chromadb
+- Vector database
+
+pypdf
+- PDF reading
+
+sentence-transformers
+- Embedding support
+
+==================================================
+PROJECT STRUCTURE
+==================================================
+
+enterprise-rag-chatbot-GenAi
+
+app.py
+ingest.py
+requirements.txt
+
+data/
+    sample.pdf
+
+chroma_db/
+
+utils/
+    __init__.py
+    pdf_loader.py
+    chunker.py
+    embeddings.py
+    vector_store.py
+    rag_engine.py
+
+==================================================
+FILE PURPOSES
+==================================================
+
+requirements.txt
+- Installs dependencies
+
+pdf_loader.py
+- Reads PDF documents
+
+chunker.py
+- Splits documents into chunks
+
+embeddings.py
+- Converts text to vectors
+
+vector_store.py
+- Saves vectors in ChromaDB
+
+ingest.py
+- Creates vector database
+
+rag_engine.py
+- Similarity search and LLM response
+
+app.py
+- Streamlit user interface
+
+==================================================
+PROCESS FLOW
+==================================================
+
+Step 1:
+Load PDF
+
+Step 2:
+Chunk PDF
+
+Step 3:
+Generate Embeddings
+
+Step 4:
+Store in ChromaDB
+
+Step 5:
+User asks question
+
+Step 6:
+Similarity Search
+
+Step 7:
+Retrieve relevant chunks
+
+Step 8:
+Send context + question to Llama3
+
+Step 9:
+Generate answer
+
+==================================================
+COMMANDS
+==================================================
+
+Create venv:
+python -m venv venv
+
+Install packages:
+pip install -r requirements.txt
+
+ollama pulling image:
+ollama pull llama3
+ollama pull nomic-embed-text
+
+Build vector database:
+python ingest.py
+
+Run application:
+streamlit run app.py
+
+==================================================
+INTERVIEW QUESTIONS
+==================================================
+
+What is RAG?
+Retrieval Augmented Generation combines retrieval and LLM generation.
+
+What are embeddings?
+Numerical vector representation of text.
+
+Why chunking?
+LLMs have context limits.
+
+Why ChromaDB?
+Stores vectors and supports semantic search.
+
+Why Ollama?
+Free local LLM execution.
+
+What is similarity search?
+Finding semantically relevant chunks.
+
+==================================================
+RESUME SUMMARY
+==================================================
+
+Built an Enterprise RAG Chatbot using Python, Streamlit, LangChain, Ollama, Llama3 and ChromaDB. Implemented PDF ingestion, chunking, embeddings, semantic similarity search and retrieval-augmented generation for document-based question answering.
