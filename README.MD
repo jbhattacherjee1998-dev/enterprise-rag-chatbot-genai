@@ -5,6 +5,7 @@ Enterprise RAG Chatbot using
 - Ollama
 - Llama3
 - ChromaDB
+
 need to pull and run containers /these below models
-ollama pull llama3
-ollama pull nomic-embed-text
+ - ollama pull llama3
+ - ollama pull nomic-embed-text
